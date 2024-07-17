@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-scroll";
 import { useSpring, animated } from "@react-spring/web";
 
-import "./Layout.css"; // Styles specific to the Layout component
+import "../styles/Layout.css"; // Styles specific to the Layout component
 
 const Layout: React.FC = ({ children }) => {
   const [hoveredAbout, setHoveredAbout] = React.useState(false);
