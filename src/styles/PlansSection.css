@@ -1,0 +1,116 @@
+.plans-section {
+  padding: 4rem 2rem;
+  background-color: #000; /* Match the dark background */
+  color: #fff;
+  text-align: center;
+}
+
+.plans-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #b4ff5a; /* Adjust the color to match the green hue */
+  margin-bottom: 2rem;
+}
+
+.plans-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.plan-card {
+  background-color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  width: 20rem;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.1); /* Subtle green glow */
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.plan-card:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+}
+
+.plan-type {
+  font-size: 1.5rem;
+  color: #b4ff5a; /* Adjust the color to match the green hue */
+  margin-bottom: 1rem;
+}
+
+.plan-price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #b4ff5a; /* Adjust the color to match the green hue */
+}
+
+.plan-duration {
+  display: block;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.plan-features li {
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.plan-features li::before {
+  content: "✓";
+  color: #b4ff5a; /* Adjust the color to match the green hue */
+  position: absolute;
+  left: 0;
+}
+
+.plan-features li.unavailable {
+  color: #777;
+  text-decoration: line-through;
+}
+
+.plan-features li.unavailable::before {
+  content: "✖";
+  color: #777;
+}
+
+.plan-button {
+  background-color: #222;
+  color: #b4ff5a; /* Adjust the color to match the green hue */
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.plan-button:hover {
+  background-color: #b4ff5a; /* Adjust the color to match the green hue */
+  color: #000;
+}
+
+.popular {
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2); /* Enhanced green glow */
+}
+
+.popular-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #b4ff5a; /* Adjust the color to match the green hue */
+  color: #000;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+}

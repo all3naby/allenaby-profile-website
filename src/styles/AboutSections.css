@@ -1,0 +1,44 @@
+.about-section {
+  padding: 4rem 2rem;
+  background-color: #000;
+  color: #b4ff5a;
+  text-align: center;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #b4ff5a; /* Adjust the color to match the green hue */
+  margin-bottom: 2rem;
+}
+
+.about-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.about-card {
+  background-color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  width: 20rem;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.1); /* Subtle green glow */
+  transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #b4ff5a; /* Adjust the color to match the green hue */
+  margin-bottom: 1rem;
+}
+
+.card-content {
+  font-size: 1rem;
+  color: #ccc;
+}
