@@ -18,24 +18,27 @@ body {
   color: #fff;
   padding: 20px 40px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
+  z-index: 1000; /* Ensure header is above other content */
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 48px;
   font-weight: bold;
+  padding-left: 5%; /* Adjust as needed */
+  flex-shrink: 0; /* Prevent logo from shrinking */
 }
 
 .nav {
-  display: inline-block;
+  display: flex;
+  align-items: center;
 }
 
 .nav-list {
   list-style: none;
   display: flex;
+  gap: 20px;
   margin: 0;
   padding: 0;
-  gap: 20px;
 }
 
 .nav-item {
@@ -63,10 +66,13 @@ main {
   padding-top: 120px; /* Ensure content doesn't hide under fixed header */
 }
 
-section {
+.section {
   padding: 50px 20px;
   margin: 20px 0;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .nav-link {
@@ -79,4 +85,29 @@ section {
 
 .nav-link:hover {
   color: #ddd;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    margin-bottom: 1rem;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .section {
+    padding: 20px 10px;
+  }
+
+  main {
+    padding-top: 160px; /* Adjust for smaller screens */
+  }
 }
