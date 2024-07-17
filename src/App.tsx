@@ -5,6 +5,7 @@ import "./App.css";
 import ServicesSection from "./components/ServicesSection";
 import PlansSection from "./components/PlansSection";
 import ContactSection from "./components/ContactSection.";
+import FAQ from "./components/FAQSection";
 
 const App: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const App: React.FC = () => {
         <ServicesSection />
         <PlansSection />
         <ContactSection />
+        <FAQ />
       </Layout>
     </div>
   );

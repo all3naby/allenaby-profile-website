@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-scroll";
 import { useSpring, animated } from "@react-spring/web";
-
 import "../styles/Layout.css"; // Styles specific to the Layout component
 
-const Layout: React.FC = ({ children }) => {
+const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [hoveredAbout, setHoveredAbout] = React.useState(false);
   const [hoveredServices, setHoveredServices] = React.useState(false);
   const [hoveredPlans, setHoveredPlans] = React.useState(false);
