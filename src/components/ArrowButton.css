@@ -1,0 +1,11 @@
+.arrow-button {
+  margin-left: 10px;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.arrow-button:hover {
+  color: #ddd;
+}
