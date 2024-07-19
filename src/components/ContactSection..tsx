@@ -16,14 +16,14 @@ const ContactSection: React.FC = () => (
       <div className="contact-info">
         <h3 className="info-title">Email</h3>
         <p className="info-item">
-          <a href="mailto:mail@nebula.com" className="contact-link">
-            mail@nebula.com <span className="arrow">➔</span>
+          <a href="mailto:email@allenaby.com" className="contact-link">
+            email@allenaby.com <span className="arrow">➔</span>
           </a>
         </p>
         <h3 className="info-title">Phone</h3>
         <p className="info-item">
-          <a href="tel:+31203439223" className="contact-link">
-            +31 (0) 20 343 9223 <span className="arrow">➔</span>
+          <a href="tel:+15483336069" className="contact-link">
+            +1 (548) 333 6069 <span className="arrow">➔</span>
           </a>
         </p>
       </div>
