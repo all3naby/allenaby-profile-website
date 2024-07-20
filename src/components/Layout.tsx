@@ -33,7 +33,9 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 onMouseLeave={() =>
                   setHovered((prev) => ({ ...prev, [item]: false }))
                 }
-                style={springProps(item)}
+                style={springProps(
+                  item as "about" | "services" | "plans" | "contact"
+                )}
               >
                 <li className="nav-item">
                   <Link to={item} smooth={true} duration={500}>
