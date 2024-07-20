@@ -12,7 +12,7 @@ const Container = styled.div`
 `;
 
 const Question = styled.div`
-  display: flex;
+  display: inline-block;
   justify-content: space-between;
   align-items: center;
   font-size: 1.2em;
@@ -22,6 +22,13 @@ const Answer = styled(motion.div)`
   padding-top: 10px;
   font-size: 1em;
   color: #a9a9a9;
+`;
+
+const Arrow = styled.span<{ isOpen: boolean }>`
+  display: inline-block
+  width:20px
+  transition: transform 0.3s ease
+  transform: ${({ isOpen }) => (isOpen ? "rotate(90deg)" : "rotate(0)")}
 `;
 
 const FAQItem = ({
@@ -35,7 +42,11 @@ const FAQItem = ({
 
   return (
     <Container onClick={() => setIsOpen(!isOpen)}>
-      <Question>{question}</Question>
+      <Question>
+        <Arrow isOpen={isOpen}>▸</Arrow>
+        &nbsp;&nbsp;
+        {question}
+      </Question>
       <AnimatePresence>
         {isOpen && (
           <Answer

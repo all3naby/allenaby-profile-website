@@ -1,7 +1,8 @@
+/* App.css */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #000;
+  background-color: #000;
   color: #fff;
 }
 
@@ -12,5 +13,91 @@ main {
 section {
   padding: 50px 20px;
   margin: 20px 0;
+}
+
+/* Layout.css */
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
   color: #fff;
+  padding: 20px 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Ensure header is above other content */
+}
+
+.logo {
+  font-size: 48px;
+  font-weight: bold;
+  flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  font-size: 16px;
+}
+
+.nav-item a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-item a:hover {
+  color: #66ff99; /* Light green on hover */
+}
+
+.nav-link {
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ddd;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    margin-bottom: 1rem;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  main {
+    padding-top: 160px; /* Adjust for smaller screens */
+  }
 }

@@ -1,25 +1,21 @@
+// Layout.tsx
 import React from "react";
 import { Link } from "react-scroll";
 import { useSpring, animated } from "@react-spring/web";
 import "../styles/Layout.css"; // Styles specific to the Layout component
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [hoveredAbout, setHoveredAbout] = React.useState(false);
-  const [hoveredServices, setHoveredServices] = React.useState(false);
-  const [hoveredPlans, setHoveredPlans] = React.useState(false);
-  const [hoveredContact, setHoveredContact] = React.useState(false);
-  const { x } = useSpring({
-    x: hoveredAbout ? 10 : 0,
+  const [hovered, setHovered] = React.useState({
+    about: false,
+    services: false,
+    plans: false,
+    contact: false,
   });
-  const { y } = useSpring({
-    y: hoveredServices ? 10 : 0,
-  });
-  const { z } = useSpring({
-    z: hoveredPlans ? 10 : 0,
-  });
-  const { w } = useSpring({
-    w: hoveredContact ? 10 : 0,
-  });
+
+  const springProps = (hoverKey: "about" | "services" | "plans" | "contact") =>
+    useSpring({
+      transform: hovered[hoverKey] ? "translateX(10px)" : "translateX(0px)",
+    });
 
   return (
     <div>
@@ -27,62 +23,25 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <h1 className="logo">Allen Aby</h1>
         <nav className="nav">
           <ul className="nav-list">
-            <animated.div
-              className="nav-link"
-              onMouseEnter={() => setHoveredAbout(true)}
-              onMouseLeave={() => setHoveredAbout(false)}
-              style={{
-                transform: x.to((x) => `translateX(${x}px)`),
-              }}
-            >
-              <li className="nav-item">
-                <Link to="about" smooth={true} duration={500}>
-                  About
-                </Link>
-              </li>
-            </animated.div>
-            <animated.div
-              className="nav-link"
-              onMouseEnter={() => setHoveredServices(true)}
-              onMouseLeave={() => setHoveredServices(false)}
-              style={{
-                transform: y.to((y) => `translateX(${y}px)`),
-              }}
-            >
-              <li className="nav-item">
-                <Link to="services" smooth={true} duration={500}>
-                  Services
-                </Link>
-              </li>
-            </animated.div>
-            <animated.div
-              className="nav-link"
-              onMouseEnter={() => setHoveredPlans(true)}
-              onMouseLeave={() => setHoveredPlans(false)}
-              style={{
-                transform: z.to((z) => `translateX(${z}px)`),
-              }}
-            >
-              <li className="nav-item">
-                <Link to="plans" smooth={true} duration={500}>
-                  Plans
-                </Link>
-              </li>
-            </animated.div>
-            <animated.div
-              className="nav-link"
-              onMouseEnter={() => setHoveredContact(true)}
-              onMouseLeave={() => setHoveredContact(false)}
-              style={{
-                transform: w.to((w) => `translateX(${w}px)`),
-              }}
-            >
-              <li className="nav-item">
-                <Link to="contact" smooth={true} duration={500}>
-                  Contact
-                </Link>
-              </li>
-            </animated.div>
+            {["about", "services", "plans", "contact"].map((item) => (
+              <animated.div
+                key={item}
+                className="nav-link"
+                onMouseEnter={() =>
+                  setHovered((prev) => ({ ...prev, [item]: true }))
+                }
+                onMouseLeave={() =>
+                  setHovered((prev) => ({ ...prev, [item]: false }))
+                }
+                style={springProps(item)}
+              >
+                <li className="nav-item">
+                  <Link to={item} smooth={true} duration={500}>
+                    {item.charAt(0).toUpperCase() + item.slice(1)}
+                  </Link>
+                </li>
+              </animated.div>
+            ))}
           </ul>
         </nav>
       </header>
